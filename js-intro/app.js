@@ -35,8 +35,7 @@ function calculate(inp1, inp2, action) {
         return num1 * num2
     } else if (action == '/') {
         return num1 / num2
-    }
-    else {
+    } else {
         return console.error('Underfined Action');
     }
 }
