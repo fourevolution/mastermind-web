@@ -2,6 +2,8 @@ const inputElement = document.getElementById('title')
 const createBtn = document.getElementById('create')
 const listElement = document.getElementById('list')
 
+// Этот код нужен для описание работы git
+
 const notes = [
     {
         
