@@ -63,3 +63,20 @@ console.log(sum(40, 53), sum(24), sum())
 // Множественные значения - REST operator
 const sumAll = (...numbers) => numbers.reduce((acc, cur) => acc += cur, 0)
 console.log(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9))
+
+// **** Closures (Замыкания) 
+
+function createPerson(name) {
+    return function (lastName) {
+        console.log(name + ' ' + lastName)
+    }
+}
+
+// Замыкание в данном случае позволяет нам изменять поведение функции через
+// Оборачивание ее в другую функцию (Похоже на декоратор)
+
+const addLastName = createPerson('Владилен')
+lastNames = ['Брусникин', 'Гаврилин', 'Минин', 'Пожарский']
+for (let i = 0; i < lastNames.length; i++) {
+    addLastName(lastNames[i])
+}
