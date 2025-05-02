@@ -1,0 +1,54 @@
+//  **** Function declaration
+
+function greet(name) {
+    console.log('1. Hello,', name, '!')
+}
+
+//  **** Function Expression
+const greet2 = function (name) {
+    console.log('2. Hello,', name, '!')
+}
+
+greet('Petya')
+greet2('Petya')
+
+//  ****  Function declaration поддерживает Hoisting
+// хоистинг - выполнение функции до ее инициализации
+// Function expression - не поддерживает
+
+/*
+    MDN web docs: 
+
+    Поднятие (hoisting) — термин, который вы не встретите в документации JavaScript.
+    Поднятие задумывалось как общий способ мышления о том, как контекст исполнения
+    (в частности, фазы создания и исполнения) работает в JavaScript.
+    Однако, hoisting может привести и к недоразумениям. Например, hoisting учит,
+    что объявление переменной или функции физически перемещается в начало вашего кода,
+    хотя в действительности этого не происходит.
+    На самом же деле, объявления переменных и функций попадают в память
+    в процессе фазы компиляции, но остаются в коде на том месте, где вы их объявили.
+*/
+
+// console.dir(greet)
+
+// Анонимная функция таймаут
+setTimeout(function() {
+    greet('Gregory')
+}
+, 1500)
+
+// Reload page every second =)) STUPID!!!
+let counter = 0
+const interval = setInterval(function() {
+    if (counter < 5) {
+        window.location.reload()
+    } else {
+        clearInterval(interval)
+    }
+}, 10e3)
+
+// **** Arrow Functions
+
+const arrow = (name) => {
+    console.log(name)
+}
