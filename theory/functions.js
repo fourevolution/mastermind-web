@@ -48,7 +48,18 @@ const interval = setInterval(function() {
 }, 10e3)
 
 // **** Arrow Functions
+// Comparison funcdec 7 arrow functions
 
-const arrow = (name) => {
-    console.log(name)
+function pow(num, exp) {
+    return Math.pow(num, exp)
 }
+
+const pow2 = (num, exp) => Math.pow(num, exp)
+
+// Default Parameters
+const sum = (a = 5, b = a / 10) => a + b
+console.log(sum(40, 53), sum(24), sum())
+
+// Множественные значения - REST operator
+const sumAll = (...numbers) => numbers.reduce((acc, cur) => acc += cur, 0)
+console.log(sumAll(1, 2, 3, 4, 5, 6, 7, 8, 9))
